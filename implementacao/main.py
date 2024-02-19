@@ -7,7 +7,7 @@ import threading
 import time
 
 def main():
-    
+
     #Leitura do sensor de luminosidade e gerenciamento da ativação do iluminador;
     array_messages_light = lightSensorRead()
     for message in array_messages_light:
@@ -24,6 +24,7 @@ def main():
         if operationalBatteryLevel(mensagem["VALOR_LIDO"]):
             break
 
+    #Leitura do GPS
     gpsPositionRead()
 
 

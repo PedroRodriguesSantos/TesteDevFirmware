@@ -7,12 +7,10 @@ import random
 - Leitura ordenada de forma crescente;  
 """
 def lightSensorRead():
-    
     id = 0
-    value_read = 0
     
     messages = []
-    message = readI2C(id, value_read)
+    message = readI2C(id)
     messages.append(message)
     
     return sorted(messages, key=lambda x: x["VALOR_LIDO"])

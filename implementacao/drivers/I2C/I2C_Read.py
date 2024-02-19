@@ -1,6 +1,6 @@
 import random
 
-def readI2C(id, value_read):
+def readI2C(id):
 
     #Simulacao leitura sensores
     if id == 0:  #Sensor de Luminosidade

@@ -7,10 +7,9 @@ from drivers.I2C.I2C_Read import readI2C
 """
 def distanceSensorRead():
     id = 2
-    value_read = 0
     
     messages = []
-    message = readI2C(id, value_read)
+    message = readI2C(id)
     messages.append(message)
     
     return sorted(messages, key=lambda x: x["VALOR_LIDO"])
