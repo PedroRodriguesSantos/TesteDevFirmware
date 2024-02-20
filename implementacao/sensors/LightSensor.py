@@ -1,5 +1,7 @@
 from drivers.I2C.I2C_Read import readI2C
+from counterTimer.CounterTimer import counterTimerProcess, max_timer_sensors
 import random
+import time
 
 #Leitura do sensor de luminosidade
 """
@@ -26,3 +28,15 @@ def activateIlluminator(value_read):
     else:
         print("Leitura:", value_read, "Iluminador DESATIVADO")
 
+
+
+def routineLightSensor():
+
+    timer_routine_light_sensor = counterTimerProcess(0)
+    if timer_routine_light_sensor > max_timer_sensors:  # A cada 5 segundos    
+        array_messages_light = lightSensorRead()
+        for message in array_messages_light:
+            activateIlluminator(message["VALOR_LIDO"])
+        timer_routine_light_sensor = 0
+        
+    

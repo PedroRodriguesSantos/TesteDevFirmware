@@ -6,7 +6,7 @@ from drivers.I2C.I2C_Read import readI2C
 - Leitura ordenada de forma crescente;
 """
 def batterySensorRead():
-    id = 1
+    id = 2
 
     messages = []
     message = readI2C(id)
